@@ -23,3 +23,28 @@
 #circle_width {
     margin-bottom: 20px;
 }
+
+#ink-level {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    width: 200px;
+    height: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+  }
+  
+  .ink-bar {
+    width: 80%;
+    height: 100%;
+    background-color: #ccc;
+    border-radius: 5px;
+  }
+  
+  .ink-level-indicator {
+    height: 100%;
+    background-color: #00ff00;
+    width:100%;
+  }

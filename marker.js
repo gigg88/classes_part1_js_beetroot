@@ -12,12 +12,32 @@ class Marker {
         this.inkAmount = inkAmount;
     }
 
-    setColor(color) {
-        this.color = color;
-    }
+   // setColor(color) {
+     //   this.color = color;
+   // }
 
-    setInkAmount(inkAmount){
-        this.inkAmount = inkAmount;
+   // setInkAmount(inkAmount){
+    //    this.inkAmount = inkAmount;
+   // }
+   
+
+    printText(text) {
+        const inkPerCharacter = 0.5;
+        const requiredInk = text.length * inkPerCharacter;
+
+        if(requiredInk <= this.inkAmount) {
+            this.inkAmount -= requiredInk;
+            console.log(text);
+            console.log(requiredInk);
+            console.log(this.inkAmount);
+        } else {
+            console.log("Out of ink");
+        }
     }
 }
+
+const marker = new Marker("blue", 100);
+marker.printText("Hello World");
+marker.printText("Hello World");
+marker.printText("Hello World");
 
