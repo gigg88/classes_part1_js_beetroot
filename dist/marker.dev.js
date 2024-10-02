@@ -19,15 +19,19 @@ function () {
 
     this.color = color;
     this.inkAmount = inkAmount;
-  } // setColor(color) {
-  //   this.color = color;
-  // }
-  // setInkAmount(inkAmount){
-  //    this.inkAmount = inkAmount;
-  // }
-
+  }
 
   _createClass(Marker, [{
+    key: "setInkAmount",
+    value: function setInkAmount(InkAmount) {
+      this.InkAmount = 100;
+    }
+  }, {
+    key: "getInkAmount",
+    value: function getInkAmount() {
+      return this.InkAmount;
+    }
+  }, {
     key: "printText",
     value: function printText(text) {
       var inkPerCharacter = 0.5;
@@ -35,9 +39,6 @@ function () {
 
       if (requiredInk <= this.inkAmount) {
         this.inkAmount -= requiredInk;
-        console.log(text);
-        console.log(requiredInk);
-        console.log(this.inkAmount);
       } else {
         console.log("Out of ink");
       }
@@ -47,7 +48,13 @@ function () {
   return Marker;
 }();
 
-var marker = new Marker("blue", 100);
-marker.printText("Hello World");
-marker.printText("Hello World");
-marker.printText("Hello World");
+var inputText = document.getElementById("inputText");
+var textArea = document.getElementById("textarea");
+var inkValue = document.getElementById("ink_value");
+
+function btnClick() {
+  var inputValue = inputText.value;
+  textArea.textContent = inputValue;
+  var marker = new Marker("blue", getInkAmount());
+  inkValue.textContent = "Remaining ink: ".concat(marker.getInkAmount(), "%");
+}

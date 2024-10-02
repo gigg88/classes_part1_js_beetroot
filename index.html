@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,51 +17,47 @@
     <label for="circle_width">Circle Width:</label>
     <input type="number" id="circle_width" onclick="newValue()" min="0" placeholder="Enter the width">
 
-<div class="design">
-<div class="box">
-    <label for="radius_display">Radius:</label>
-    <span id="radius_display">0</span>
-</div>
-    
-<div class="box">
-    <label for="diameter_display">Diameter:</label>
-    <span id="diameter_display">0</span>
+    <div class="design">
+        <div class="box">
+            <label for="radius_display">Radius:</label>
+            <span id="radius_display">0</span>
+        </div>
+
+        <div class="box">
+            <label for="diameter_display">Diameter:</label>
+            <span id="diameter_display">0</span>
+        </div>
+
+        <div class="box">
+            <label for="area_display">Area:</label>
+            <span id="area_display">0</span>
+        </div>
+
+        <div class="box">
+            <label for="length_display">Length of Circle:</label>
+            <span id="length_display">0</span>
+        </div>
+    </div>
 </div>
 
-<div class="box">
-    <label for="area_display">Area:</label>
-    <span id="area_display">0</span>
-</div>
+<div class="container">
+    <div class="wrapper">
+        <label for="inputText">Text :</label>
+        <input type="text" id="inputText" name="inputText">
 
-<div class="box">
-    <label for="length_display">Length of Circle:</label>
-    <span id="length_display">0</span>
-</div>
-</div>
-</div>
+        <button onclick="btnClick()" class="btn">print</button>
 
-<div id="ink-level">
-    <span>Ink Level:</span>
-    <div class="ink-bar">
-      <div class="ink-level-indicator">
-    
-    <span>10%</span>
-    <span>20%</span>
-    <span>30%</span>
-    <span>40%</span>
-    <span>50%</span>
-    <span>60%</span>
-    <span>70%</span>
-    <span>80%</span>
-    <span>90%</span>
-    <span>100%</span>
+        <div class="text_area" id="textarea">
 
-  </div> 
-</div>
+        </div>
+    </div>
+    <div class="ink_status" id="ink_value">0</div>
 </div>
 
 <body>
     <script src="main.js"></script>
     <script src="marker.js"></script>
+    <script src="test.js"></script>
 </body>
+
 </html>
