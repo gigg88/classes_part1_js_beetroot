@@ -7,18 +7,18 @@
 // Implement a class that describes a refillable marker. Inherit this class from a simple marker and add a method for refilling.
 
 class Marker {
-    constructor(color, inkAmount){
+    constructor(color, inkAmount) {
         this.color = color;
         this.inkAmount = inkAmount;
     }
 
-    setInkAmount(InkAmount){
-        this.InkAmount = 100;
-       }
+    setInkAmount(inkAmount) {
+        this.inkAmount = 100;
+    }
 
-   getInkAmount(){
-    return this.InkAmount;
-   }
+    getInkAmount() {
+        return this.inkAmount;
+    }
 
     printText(text) {
         const inkPerCharacter = 0.5;
@@ -35,13 +35,25 @@ class Marker {
 
 }
 
+class RefillableMarker extends Marker {
+    refill() {
+        this.setInkAmount(100);
+    }
+}
+
 const inputText = document.getElementById("inputText");
 const textArea = document.getElementById("textarea");
 const inkValue = document.getElementById("ink_value");
 
-function btnClick(){
-  const inputValue = inputText.value;
-  textArea.textContent = inputValue;
-  const marker = new Marker("blue", getInkAmount());
-  inkValue.textContent = `Remaining ink: ${marker.getInkAmount()}%`;
+function btnClick() {
+    const inputValue = inputText.value;
+    textArea.textContent = inputValue;
+
+    const refillableMarker = new RefillableMarker("blue", 100);
+    refillableMarker.printText(inputValue);
+
+    inkValue.textContent = `Remaining ink: ${refillableMarker.getInkAmount()}%`;
+
+    inputText.value ='';
 }
+
